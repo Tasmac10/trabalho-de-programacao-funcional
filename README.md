@@ -25,6 +25,3 @@ Um divertido e desafiador jogo de adivinhação de palavras inspirado no clássi
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
----
-
-Espero que se divirta com o Guilhotina! Se tiver sugestões ou feedbacks, sinta-se à vontade para contribuir ou abrir uma issue. Boa sorte! 🎮🔍📚
