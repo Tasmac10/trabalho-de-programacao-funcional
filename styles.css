@@ -1,0 +1,27 @@
+/* Este código CSS define estilos gerais para o nosso jogo. Ele incluirá estilos para o corpo da página, 
+para o contêiner principal.*/
+
+body {
+    font-family: 'Luminari', fantasy;
+    text-align: center;
+    background-color: none; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*.container é uma classe do body. Ele coloca uma imagem de fundo do jogo e ajusta suas proporções.*/
+
+.container{
+    background-image: url('https://img.goodfon.com/original/1920x1200/6/14/assassin-s-creed-unity-429.jpg');
+    height: 90vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------------------------------------------------------------*/
