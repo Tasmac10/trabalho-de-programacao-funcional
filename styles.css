@@ -95,3 +95,64 @@ distancia para objetos que firarão dentro dele, sua proporções, e centraliza-
     padding: 10px 20px;
 
 }
+
+/* "p" representa as estilizações nos parágrafos no código html, como escolha da fonte, tamanho da fonte, cores e dimensões das margens  */
+
+p{
+    font-family: 'Luminari', fantasy;
+    font-size: 20px;
+    color: #8b0000;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border: 2px solid #8b0000;
+    padding: 5px 10px;
+    border-radius: 10px;  
+    display: inline-block;
+    margin-top: 10px;
+    height: 40px;
+    
+}
+
+/*#virtual-keyboard é usado para aplicar estilos a esse elemento específico. 
+Nesse caso, o estilo margin-top está sendo aplicado para adicionar uma margem superior de 30 pixels ao elemento.*/
+#virtual-keyboard {
+    margin-top: 30px;
+}
+
+/*O .key está definido para a fonte, tamanho da fonte, cor, margem, preenchimento, cor de fundo, borda, raio da borda e cursor do mouse. 
+Além disso, há uma transição de cor de fundo definida para ocorrer em 0,3 segundos quando o mouse passa sobre o elemento.*/
+.key {
+    font-family: 'Luminari', fantasy;
+    font-size: 20px;
+    color: #8b0000;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 3px solid #8b0000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/*O .key:disabled aplica estilos a um elemento com a classe .key que esteja desabilitado. 
+Nesse caso, o estilo aplicado é a mudança da cor de fundo para cinza claro (#ccc) e o cursor do mouse para "não permitido" (not-allowed). 
+Isso é útil para indicar visualmente que o elemento não pode ser interagido pelo usuário.*/
+.key:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/*O seletor #chances está sendo usado para aplicar cor do texto, a escolha da fonte em negrito,
+ a escolha da cor de fundo, a escolha da cor da borda, o preenchimento interno do elemento, o raio da borda, a escolha do tipo de exibição do elemento,
+ e a escolha da margem superior do elemento.*/
+
+#chances {
+    color: #8b0000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 0px;
+}

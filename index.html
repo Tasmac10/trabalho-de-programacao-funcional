@@ -44,5 +44,46 @@ além disso, criação de classes e divisões.-->
         <button id="startbutton" onclick="startGame()">Iniciar Jogo</button>  <!-- Botão para começar o jogo, ele está ligado com a função "startGame do código javascript" -->
     </div>
     </div>
+    <div id="game" style="display:none;">
+    <!-- chamada do arquivo em javascript com todas as funcionalidades do jogo-->
+        <script scr="script.js"></script>
 
+      <!--@@@@Arthur colocar as div de Dicas Aqui ("hint")-->
+        
+      <p id="word-display"></p>
+        <!--Nesse código abaixo estão todos os botões que representam o teclado para o jogador interagir com a interface do display, que exibirá as letras da palavra da guilhotina-->
+        <div id="virtual-keyboard">
+        
+        <button class="key" onclick="chooseLetter(event)">Q</button>
+        <button class="key" onclick="chooseLetter(event)">W</button>
+        <button class="key" onclick="chooseLetter(event)">E</button>
+        <button class="key" onclick="chooseLetter(event)">R</button>
+        <button class="key" onclick="chooseLetter(event)">T</button>
+        <button class="key" onclick="chooseLetter(event)">Y</button>
+        <button class="key" onclick="chooseLetter(event)">U</button>
+        <button class="key" onclick="chooseLetter(event)">I</button>
+        <button class="key" onclick="chooseLetter(event)">O</button>
+        <button class="key" onclick="chooseLetter(event)">P</button>
+        <br>
+        <button class="key" onclick="chooseLetter(event)">A</button>
+        <button class="key" onclick="chooseLetter(event)">S</button>
+        <button class="key" onclick="chooseLetter(event)">D</button>
+        <button class="key" onclick="chooseLetter(event)">F</button>
+        <button class="key" onclick="chooseLetter(event)">G</button>
+        <button class="key" onclick="chooseLetter(event)">H</button>
+        <button class="key" onclick="chooseLetter(event)">J</button>
+        <button class="key" onclick="chooseLetter(event)">K</button>
+        <button class="key" onclick="chooseLetter(event)">L</button>
+        <br>
+        <button class="key" onclick="chooseLetter(event)">Z</button>
+        <button class="key" onclick="chooseLetter(event)">X</button>
+        <button class="key" onclick="chooseLetter(event)">C</button>
+        <button class="key" onclick="chooseLetter(event)">V</button>
+        <button class="key" onclick="chooseLetter(event)">B</button>
+        <button class="key" onclick="chooseLetter(event)">N</button>
+        <button class="key" onclick="chooseLetter(event)">M</button>
+    </div>
+    <!--Já este representa a quantidade de chances que faltam do jogador.-->
+    <p>Chances restantes:<span id="chances">4</span></p>
+        </div>
 </body>

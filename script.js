@@ -58,3 +58,63 @@ function startGame() {
   document.getElementById("lostgame").style.display = "none";
   document.getElementById("wongame").style.display = "none";
 }
+  
+/*A função "decreaseChances"  é responsável por diminuir as chances do usuário de acertar a palavra. 
+Ela é chamada quando o usuário escolhe uma letra que não está presente na palavra sorteada.
+A função começa obtendo o elemento HTML que representa o número de chances restantes e o valor atual desse elemento é convertido em um número inteiro. 
+Em seguida, a função diminui o número de chances em 1 e atualiza o elemento HTML com o novo valor.
+Se o novo valor de chances for igual a 0, significa que o usuário perdeu o jogo. 
+Nesse caso, a função esconde a seção do jogo e mostra a seção de "game over", 
+além de desabilitar todas as teclas de letras para que o usuário não possa mais tentar adivinhar a palavra.*/
+ 
+const decreaseChances = () => {
+
+  const chancesElement = document.getElementById('chances');
+  const currentChances = parseInt(chancesElement.textContent);
+  const newChances = currentChances - 1;
+  chancesElement.textContent = newChances;
+
+  if (newChances === 0) {
+      document.getElementById("game").style.display = "none";
+      document.getElementById("lostgame").style.display = 'block';
+      document.getElementById("wongame").style.display = "none";
+      disableAllKeys();
+  }
+}
+
+function chooseLetter(event) {
+  const btn = event.target;
+  const char = btn.textContent.toLowerCase();
+  btn.disabled = true;
+
+  if (word.includes(char)) {
+      displayedWord = word.split('').map((letter, index) => 
+      letter === char ? char.toUpperCase() : displayedWord[index]
+  );
+      displayWord();
+      if (!displayedWord.includes('_')) {
+          document.getElementById("wongame").style.display = "block";
+          document.getElementById("game").style.display = "none";
+          disableAllKeys();
+      }
+  } else {
+      decreaseChances();
+  }
+}
+
+
+/*A função "disableAllKeys" desabilita todas as teclas de letras do jogo. 
+Ela seleciona todos os elementos HTML com a classe .key e define o atributo disabled como true para cada um deles. 
+Isso impede que o usuário clique nas teclas de letras após o jogo ter terminado.*/ 
+function disableAllKeys() {
+  Array.from(document.querySelectorAll(".key"))
+      .map(key => key.disabled = true);
+}
+
+/*A função enableAllKeys é responsável por habilitar todas as teclas de letras do jogo. 
+Ela seleciona todos os elementos HTML com a classe .key e define o atributo disabled como false para cada um deles. 
+Isso permite que o usuário clique nas teclas de letras após o jogo ter terminado.*/
+function enableAllKeys() {
+  Array.from(document.querySelectorAll(".key"))
+      .map(key => key.disabled = false);
+}
