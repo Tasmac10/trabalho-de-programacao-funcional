@@ -1,0 +1,97 @@
+/* Este código CSS define estilos gerais para o nosso jogo. Ele incluirá estilos para o corpo da página, 
+para o contêiner principal.*/
+
+body {
+    font-family: 'Luminari', fantasy;
+    text-align: center;
+    background-color: none; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*.container é uma classe do body. Ele coloca uma imagem de fundo do jogo e ajusta suas proporções.*/
+
+.container{
+    background-image: url('https://img.goodfon.com/original/1920x1200/6/14/assassin-s-creed-unity-429.jpg');
+    height: 90vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* #Header estiliza o nome Guilhotina(nome do jogo), mudando sua fonte, suas cores, seu tamanho,
+colocando sombreamento e ajustando suas margens */
+
+#header{
+    font-family: 'Luminari', fantasy;
+    font-size: 200px;
+    color: #8b0000;
+    text-shadow: 2px 2px 4px #000000;   
+    margin-top : 20px;
+}
+
+/* #setup2 ajusta as proporções, adiciona um fundo na cor branco, mas um pouco tranparente, fonte, cores,
+distancia para objetos que firarão dentro dele, sua proporções, e centraliza-o */
+
+#setup2 {
+    font-family: 'Luminari', fantasy;
+    color: #8b0000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 10px 100px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* #level estiliza o botão de escolher nivel, alterando sua fonte, margens, tamanho, cores, e background*/
+
+#level {
+    font-family: 'Luminari', fantasy;
+    color: #8b0000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* #theme estiliza o botão de escolher o tema, alterando sua fonte, margens, tamanho, cores, e background */
+
+#theme {
+    font-family: 'Luminari', fantasy;
+    color: #8b0000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* #startbutton estiliza o botão de começar o jogo, ajusta suas cores, fonte, tamanho e margens*/
+
+#startbutton {
+    background-color: #8b0000;
+    color: #fff;
+    font-family: 'Luminari', fantasy;  ;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 20px;
+
+}
