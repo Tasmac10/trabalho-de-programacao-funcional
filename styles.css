@@ -1,0 +1,230 @@
+/* Este código CSS define estilos gerais para o nosso jogo. Ele incluirá estilos para o corpo da página,
+contêiner principal, teclado, resultados, guilhotina entre outros. */
+
+body {
+    font-family: 'Luminari', fantasy;
+    text-align: center;
+    background-color: none; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*.container é uma classe do body. Ele coloca uma imagem de fundo do jogo e ajusta suas proporções. */
+
+.container{
+    background-image: url('https://img.goodfon.com/original/1920x1200/6/14/assassin-s-creed-unity-429.jpg');
+    height: 90vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* #Header estiliza o nome Guilhotina(nome do jogo), mudando sua fonte, suas cores, seu tamanho,
+colocando sombreamento e ajustando suas margens. */
+
+#header{
+    font-family: 'Luminari', fantasy;
+    font-size: 200px;
+    color: #8b0000;
+    text-shadow: 2px 2px 4px #000000;   
+    margin-top : 20px;
+}
+
+/* #setup2 ajusta as proporções, adiciona um fundo na cor branco, mas um pouco tranparente, fonte, cores,
+distancia para objetos que firarão dentro dele, sua proporções, e centraliza-o. */
+
+#setup2 {
+    font-family: 'Luminari', fantasy;
+    color: #8b0000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 10px 100px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* #level estiliza o botão de escolher nivel, alterando sua fonte, margens, tamanho, cores e seu background. */
+
+#level {
+    font-family: 'Luminari', fantasy;
+    color: #8b0000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* #theme estiliza o botão de escolher o tema, alterando sua fonte, margens, tamanho, cores e background. */
+
+#theme {
+    font-family: 'Luminari', fantasy;
+    color: #8b0000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* #startbutton estiliza o botão de começar o jogo, ajusta suas cores, fonte, tamanho e margens. */
+
+#startbutton {
+    background-color: #8b0000;
+    color: #fff;
+    font-family: 'Luminari', fantasy;  ;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 20px;
+
+}
+
+/* "p" representa as estilizações nos parágrafos no código html, como escolha da fonte, tamanho da fonte, cores e dimensões das margens. */
+
+p{
+    font-family: 'Luminari', fantasy;
+    font-size: 20px;
+    color: #8b0000;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border: 2px solid #8b0000;
+    padding: 5px 10px;
+    border-radius: 10px;  
+    display: inline-block;
+    margin-top: 10px;
+    height: 40px;
+    
+}
+
+/* #word-display aplica estilizações no campo de palvras do código html, como escolha e tamanho da fonte, cores e dimensionamento para as margens. */
+
+#word-display {
+    font-family: 'Luminari', fantasy;
+    font-size: 26px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    height: 30px;
+}
+
+/* #virtual-keyboard é usado para aplicar estilos a esse elemento específico. Nesse caso, 
+o estilo margin-top está sendo aplicado para adicionar uma margem superior de 30 pixels ao elemento.*/
+
+#virtual-keyboard {
+    margin-top: 30px;
+}
+
+/* O .key está definido para a fonte, tamanho da fonte, cor, margem, preenchimento, cor de fundo, borda, raio da borda e cursor do mouse. 
+Além disso, há uma transição de cor de fundo definida para ocorrer em 0,3 segundos quando o mouse passa sobre o elemento. */
+
+.key {
+    font-family: 'Luminari', fantasy;
+    font-size: 20px;
+    color: #8b0000;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 3px solid #8b0000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/* O .key:disabled aplica estilos a um elemento com a classe .key que esteja desabilitado. Nesse caso, 
+o estilo aplicado é a mudança da cor de fundo para cinza claro (#ccc) e o cursor do mouse para "não permitido" (not-allowed). 
+Isso é útil para indicar visualmente que o elemento não pode ser interagido pelo usuário. */
+
+.key:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* O seletor #chances está sendo usado para aplicar cor do texto, escolha da fonte em negrito,
+escolha da cor de fundo, escolha da cor da borda, o preenchimento interno do elemento, o raio da borda, a escolha do tipo de exibição do elemento,
+além da escolha da margem superior do elemento. */
+
+#chances {
+    color: #8b0000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+/* #guilhotina-gif estiliza o gif da guilhotina ajustando suas cores, tamanho e margens. */
+
+#guilhotina-gif {
+    background-image: url('img\ghbackground.gif');
+    display: block;
+    width: 150px;
+    height: 250px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 5px solid #8b0000;
+    border-radius: 10px;
+}
+
+/* #logo aplica o estilo 'margin-top' usado para adicionar uma margem superior de 20 pixels a este elemento, o qual, refere-se ao logotipo da nossa universidade. */
+
+#logo{
+    margin-top: 20px;
+
+}
+
+/* "h1" estiliza as frases com o resultado do usuário ajustando suas cores, sua fonte, tamanho e ajustes na margem. */
+
+h1{
+    font-family: 'Luminari', fantasy;
+    font-size: 100px;
+    color: #8b0000;
+    text-shadow: 2px 2px 4px #000000;   
+    margin-top : 40px;
+}
+
+/* "a" estiliza as frases a baixo do resultado do usuário ajustando suas cores, sua fonte, tamanho e ajustes na margem. */
+
+a{
+    font-family: 'Luminari', fantasy;
+    font-size: 40px;
+    color: #8b0000;
+    text-shadow: 2px 2px 4px #000000;   
+    margin-top : 30px;
+}
+
+/* #again estiliza o botão de jogar novamente aplicando ajustes nas suas cores e fundo, na sua fonte e tamanho, além de ajustes nas margens e bordas. */
+
+#again{
+    background-color: #8b0000;
+    color: #fff;
+    font-family: 'Luminari', fantasy;  ;
+    font-size: 40px;
+    margin: 5px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    border: 3px solid black ;
+    text-shadow: 2px 2px 4px #000000;
+    box-shadow: 2px 2px 4px #000000
+}

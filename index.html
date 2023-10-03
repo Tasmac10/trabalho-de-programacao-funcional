@@ -1,0 +1,120 @@
+<!-- Configurações gerais do html, como corpo da página, título, conexões com os arquivos script.js e styles.css,
+além disso, criação de classes e divisões. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilhotina</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body class ="container">
+    <div id="setup">
+        <div>
+            <h2 id ="header">  Guilhotina</h2> <!-- Nome do jogo, que aparecerá em texto na tela do usuário. -->
+
+        </div>
+    </div>
+ 
+<!-- Espaço em que ficarão as configuraçoes do jogo (escolha de nivel e tema) e botão para começar o jogo. -->
+
+    <div id ="setup2">    
+        <h3>Escolha o Nível</h3>
+        <select id="level">    <!-- Botão para usuário selecionar/escolher a dificuldade, entre: Fácil, Médio e Difícil. -->
+            <option value="easy">Fácil</option>
+            <option value="medium">Médio</option>
+            <option value="hard">Difícil</option>
+        </select>
+        
+        <h3>Escolha o Tema</h3>
+        <select id="theme">     <!-- Botão para usuário selecionar/escolher o tema, entre: Animais, Frutas, Países, Esportes e Corpo Humano. -->
+            <option value="animals">Animais</option>
+            <option value="fruits">Frutas</option>
+            <option value="countries">Países</option>
+            <option value="sports">Esportes</option>
+            <option value="body">Corpo Humano</option>
+
+        </select>
+    
+        <h3></h3> 
+        <button id="startbutton" onclick="startGame()">Iniciar Jogo</button>  <!-- Botão para começar o jogo, ele está ligado com a função "startGame" do código javascript. -->
+    </div>
+    </div>
+    <div id="game" style="display:none;">
+    <!-- Chamada do arquivo em javascript com todas as funcionalidades do jogo -->
+        <script scr="script.js"></script>
+
+      <!-- @@@@Arthur colocar as div de Dicas Aqui ("hint") -->
+        
+      <p id="word-display"></p>
+        <!-- Nesse código abaixo estão todos os botões que representam o teclado para o jogador interagir com a interface do display, que exibirá as letras da palavra da guilhotina. -->
+        <div id="virtual-keyboard">
+        
+        <button class="key" onclick="chooseLetter(event)">Q</button>
+        <button class="key" onclick="chooseLetter(event)">W</button>
+        <button class="key" onclick="chooseLetter(event)">E</button>
+        <button class="key" onclick="chooseLetter(event)">R</button>
+        <button class="key" onclick="chooseLetter(event)">T</button>
+        <button class="key" onclick="chooseLetter(event)">Y</button>
+        <button class="key" onclick="chooseLetter(event)">U</button>
+        <button class="key" onclick="chooseLetter(event)">I</button>
+        <button class="key" onclick="chooseLetter(event)">O</button>
+        <button class="key" onclick="chooseLetter(event)">P</button>
+        <br>
+        <button class="key" onclick="chooseLetter(event)">A</button>
+        <button class="key" onclick="chooseLetter(event)">S</button>
+        <button class="key" onclick="chooseLetter(event)">D</button>
+        <button class="key" onclick="chooseLetter(event)">F</button>
+        <button class="key" onclick="chooseLetter(event)">G</button>
+        <button class="key" onclick="chooseLetter(event)">H</button>
+        <button class="key" onclick="chooseLetter(event)">J</button>
+        <button class="key" onclick="chooseLetter(event)">K</button>
+        <button class="key" onclick="chooseLetter(event)">L</button>
+        <br>
+        <button class="key" onclick="chooseLetter(event)">Z</button>
+        <button class="key" onclick="chooseLetter(event)">X</button>
+        <button class="key" onclick="chooseLetter(event)">C</button>
+        <button class="key" onclick="chooseLetter(event)">V</button>
+        <button class="key" onclick="chooseLetter(event)">B</button>
+        <button class="key" onclick="chooseLetter(event)">N</button>
+        <button class="key" onclick="chooseLetter(event)">M</button>
+    </div>
+    <!-- Já este representa a quantidade de chances que faltam do jogador. -->
+    <p>Chances restantes:<span id="chances">4</span></p>
+        </div>
+        
+<!-- Esta é a seção final, destinada à conclusão do jogo. Nela o usuário poderá verificar se ganhou ou perdeu e encontrará um botão para recomeçar o jogo. -->
+
+        <div id="lostgame" style="display:none;"> <!-- Resultado de perca do usuário. -->
+            <h1>VOCÊ PERDEU</h1>
+            <a>Foi Decapitado</a>
+            <img id="guilhotina-gif" src="img/gif guilhotina pf.gif" alt="Guilhotina caindo"> <!-- Em caso de perca, incorporamos um gif mostrando uma guilhotina decapitando um boneco. -->
+            <div>
+                <button id="again" onclick="restartGame()">Tentar Novamente</button> <!-- Botão para o usuário recomeçar o jogo, ele está ligado com a função "restartGame" do código javascript. -->
+            </div>
+        
+        </div>
+        <div id="wongame" style="display:none;"> <!-- Resultado de ganho do usuário. -->
+            <h1>VOCÊ GANHOU</h1>
+            <a>Escapou da Guilhotina</a>
+            <div>
+                <button id="again" onclick="restartGame()">Jogar Novamente</button> <!-- Botão para o usuário recomeçar o jogo, ele está ligado com a função "restartGame" do código javascript. -->
+            </div>
+        </div>    
+        <script src="script.js"></script>
+        <footer>
+    
+            <img id="logo" logo src="https://1.bp.blogspot.com/-MAKtB-lAQJw/W39Xjoy0raI/AAAAAAAAIy0/uNjQ7GuCurUSb4_L0hHDbc6Fo-_pjvAhACLcBGAs/s320/ufs_principal_positiva.png" alt="Logo" style="width: 100px; height: 82.5px; vertical-align: bottom"> <!-- Adicionamos o logotipo de nossa universidade ao nosso jogo. --> 
+          
+        </footer>
+    </div>
+    
+</body>
+
+
+
+</html>
