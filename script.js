@@ -135,3 +135,20 @@ function enableAllKeys() {
   Array.from(document.querySelectorAll(".key"))
       .map(key => key.disabled = false);
 }
+
+/* A função "restartGame" está ligada com os botões "Jogar Novamente" e "Tentar Novamente", para que quando o usuário apertar, o jogo voltará
+a primeira página com todas as suas configurações reiniciadas para que o usuário possa escolher de novo.
+Ela reinicia o número de chances, determinando 4 chances, reinicia também "word" e "displayedWord", para que quando voltar a página inicial,
+tudo consiga funcionar sem que haja conflito com o jogo anterior. "enableAllKeys" reinicia todas as teclas do teclado para que o usuário consiga apertar. */
+
+function restartGame() {
+  const chancesElement = document.getElementById('chances');
+  chancesElement.textContent = '4';
+  word = ''; 
+  displayedWord = []; 
+  enableAllKeys();
+  document.getElementById("setup").style.display = "block";
+  document.getElementById("game").style.display = "none";
+  document.getElementById("wongame").style.display = "none";
+  document.getElementById("lostgame").style.display = 'none';
+}
