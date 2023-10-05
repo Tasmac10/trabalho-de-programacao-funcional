@@ -48,10 +48,20 @@ além disso, criação de classes e divisões. -->
     <!-- Chamada do arquivo em javascript com todas as funcionalidades do jogo -->
         <script scr="script.js"></script>
 
-      <!-- @@@@Arthur colocar as div de Dicas Aqui ("hint") -->
-        
+<!-- Esta seção foi criada para a inclusão de um botão de dica, que o usuário poderá acessar caso necessário. -->
+
+    <div>
+        <button id="Hint-button">Dica</button> <!-- Botão para acessar a dica. -->
+        <img id="guilhotina-gif" src="img/ibcbcds-removebg-preview (1).png" alt="Guilhotina caindo">
+    </div>
+    <div id="Hint-container" class="hidden"> <!-- Container onde mostrará o texto referente a dica. -->
+        <p id="Hint-text"></p> <!-- Texto referente a dica, está ligado ao CSS para estilização e ao JavaScript onde será selecionado junto com a palavra. -->
+    </div>
+
+<!-- Nesse código abaixo estão todos os botões que representam o teclado para o jogador interagir com a interface do display, que exibirá as letras da palavra da guilhotina. -->
+
       <p id="word-display"></p>
-        <!-- Nesse código abaixo estão todos os botões que representam o teclado para o jogador interagir com a interface do display, que exibirá as letras da palavra da guilhotina. -->
+
         <div id="virtual-keyboard">
         
         <button class="key" onclick="chooseLetter(event)">Q</button>
@@ -83,6 +93,7 @@ além disso, criação de classes e divisões. -->
         <button class="key" onclick="chooseLetter(event)">N</button>
         <button class="key" onclick="chooseLetter(event)">M</button>
     </div>
+    
     <!-- Já este representa a quantidade de chances que faltam do jogador. -->
     <p>Chances restantes:<span id="chances">4</span></p>
         </div>
@@ -114,7 +125,6 @@ além disso, criação de classes e divisões. -->
     </div>
     
 </body>
-
 
 
 </html>

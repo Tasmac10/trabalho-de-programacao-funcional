@@ -214,7 +214,7 @@ a{
     margin-top : 30px;
 }
 
-/* #again estiliza o botão de jogar novamente aplicando ajustes nas suas cores e fundo, na sua fonte e tamanho, além de ajustes nas margens e bordas. */
+/* #again estiliza o botão de jogar novamente aplicando ajustes nas suas cores e fundo, na sua fonte e no tamanho da mesma, além de ajustes nas margens e bordas. */
 
 #again{
     background-color: #8b0000;
@@ -227,4 +227,59 @@ a{
     border: 3px solid black ;
     text-shadow: 2px 2px 4px #000000;
     box-shadow: 2px 2px 4px #000000
+}
+
+/* #Hint-button estiliza o botão da dica aplicando ajustes nas suas cores e fundo, na sua fonte e no tamanho da mesma, ajustes nas margens e bordas. Além disso,
+ adiciona uma transição de cor de fundo definida para ocorrer em 0,3 segundos. */
+
+#Hint-button {
+    font-family: 'Luminari', fantasy;
+    font-size: 20px;
+    padding: 5px 15px;
+    background-color:  #8b0000;
+    color: #ffffff;
+    border: 2px solid #000000;
+    cursor: pointer;
+    border-radius: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+}
+
+#Hint-button:hover {
+    background-color: rgba(255, 255, 255, 0.6); 
+}
+
+/* #Hint-container estiliza o container da dica (inicialmente oculto) aplicando ajustes em sua posição, incrementando transições, trocando a cor de fundo, 
+além disso, ajustando suas margens e bordas. */
+
+#Hint-container {
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #8b0000;
+    padding: 10px 15px;
+    position: absolute;
+    top: 60px; /* Ajuste a posição vertical conforme necessário. */
+    left: 5%; /* Ajuste na centralização horizontalmente conforme necessário. */
+    transform: translateX(-50%); /* Ajuste na centralização horizontalmente conforme necessário. */
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* #Hint-text estiliza o texto da dica aplicando uma fonte, definindo uma margem e mudando a cor do fundo para cinza. */
+
+#Hint-text {
+    font-family: 'Luminari', fantasy;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* #Hint-container.show cria uma pequena animação para a exibição da dica, além de ajustar a mesma. */
+
+#Hint-container.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(20px) translateY(10px); /* Ajuste a posição vertical conforme necessário. */
 }

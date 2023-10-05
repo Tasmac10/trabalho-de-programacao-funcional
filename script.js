@@ -57,25 +57,75 @@ desse elemento html e concatenar os elementos do array com separador de espaço:
   document.getElementById('word-display').textContent = displayedWord.join(' ');
 }
 
-/* A função "startGame" iniciará o jogo, tendo como entrada o nível e tema escolhido pelo usuário, sorteará uma palavra aleatoriamente 
-da lista baseada neste tema e nivel, usará a função "displayword" para que o usuário veja a palavra com as letras substituídas por traços "_" e
-para que a palavra não seja revelada, além disso, irá fazer com que só as partes pertencentes ao id = "game" fiquem a mostra na tela do usuário. */
+/* A função "startGame" iniciará o jogo, tendo como entrada o nível e tema escolhido pelo usuário, sorteará uma palavra aleatoriamente da lista baseada neste tema e nivel
+e junto com a palavra pegará a dica referente a ela, usará a função "displayword" para que o usuário veja a palavra com as letras substituídas por traços "_" e
+para que a palavra não seja revelada e usará a função "displayHint(Hint)" para que o texto referente a dica já esteja incrementado no botão da dica, além disso,
+irá fazer com que só as partes pertencentes ao id = "game" fiquem a mostra na tela do usuário. */
 
 function startGame() {
   const level = document.getElementById("level").value;
   const theme = document.getElementById("theme").value;
 
   const wordPool = words[theme][level];
-  word = wordPool[Math.floor(Math.random() * wordPool.length)];
+  const randomIndex = Math.floor(Math.random() * wordPool.length);
+  word = wordPool[randomIndex].word;
+  const Hint = wordPool[randomIndex].hint;
+
   displayedWord = Array(word.length).fill('_');
 
   displayWord();
+  displayHint(Hint);
   document.getElementById("setup").style.display = "none";
   document.getElementById("game").style.display = "block";
   document.getElementById("lostgame").style.display = "none";
   document.getElementById("wongame").style.display = "none";
 }
-  
+
+/* A função displayHint(Hint) serve para que, quando a dica for selecionada ela seja escrita no container destinado
+e chame a função "mostrarHint()" para que ela possa ser aberta quando o usuário interagir com o botão. */
+
+function displayHint(Hint) {
+  const HintText = document.getElementById('Hint-text');
+  HintText.textContent = Hint;
+  mostrarHint();
+}
+
+/* Função "mostrarHint()" está destinada a exibir a dica referente a palavra sorteada pela função "startGame". */
+
+function mostrarHint() {
+  const HintContainer = document.getElementById('Hint-container');
+  HintContainer.classList.add('show');
+}
+
+/* "btnHint" está linkado com o botão da dica e com a função "mostrarHint()" assim sendo 
+possivel o acontecimento de um evento para exibir a dica quando o botão é clicado. */
+
+const btnHint = document.getElementById('Hint-button');
+btnHint.addEventListener('click', () => {
+    const HintText = document.getElementById('Hint-text');
+
+    mostrarHint(); /* Chamada na função "mostrarHint()" que exibe a dica. */
+});
+
+/* Função "ocultarHint()" está destinada a ocultar a dica referente a palavra sorteada pela função "startGame". */
+
+function ocultarHint() {
+  const HintContainer = document.getElementById('Hint-container');
+  HintContainer.classList.remove('show');
+}
+
+/* Caso o usuário faça um clique no container da dica ou na tela do jogo está função irá ser chamada,
+assim fazendo outra chamada e ocultando a dica por meio da função "ocultarHint()". */
+
+document.addEventListener('click', (event) => {
+  const HintContainer = document.getElementById('Hint-container');
+
+  if (event.target !== btnHint && event.target !== HintContainer) {
+      
+      ocultarHint(); /* Chamada na função "ocultarHint()" que oculta a dica. */
+  }
+});
+
 /* A função "decreaseChances" é responsável por diminuir as chances do usuário de acertar a palavra. Ela irá ser chamada, 
 quando o usuário escolher uma letra que não está presente na palavra sorteada.
 A função começará obtendo o elemento HTML que representa o número de chances restantes e o valor atual desse elemento e converterá em um número inteiro. Em seguida, 
