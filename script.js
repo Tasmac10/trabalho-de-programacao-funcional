@@ -45,7 +45,12 @@ const words = {
 } 
 
 
-/* Usamos variáveis, porém ainda vamos mudar isso. */
+/*Essas variáveis são utilizadas no jogo de adivinhação de palavras.
+A variável word armazena a palavra que o usuário deve adivinhar.
+A variável displayedWord é um array que armazena a palavra a ser exibida na tela, 
+com as letras ainda não adivinhadas substituídas por traços "_".
+Essas variáveis são inicializadas com valor undefined e serão atualizadas pela função startGame().
+Utilizamos as variáveis, por que não encontramos outra alternativa para advinhação de palavra e substituíção destas ao tracejado*/
 
 let word;
 let displayedWord;
@@ -82,47 +87,47 @@ function startGame() {
 }
 
 /* A função displayHint(Hint) serve para que, quando a dica for selecionada ela seja escrita no container destinado
-e chame a função "mostrarHint()" para que ela possa ser aberta quando o usuário interagir com o botão. */
+e chame a função "showHint()" para que ela possa ser aberta quando o usuário interagir com o botão. */
 
 function displayHint(Hint) {
   const HintText = document.getElementById('Hint-text');
   HintText.textContent = Hint;
-  mostrarHint();
+  showHint();
 }
 
-/* Função "mostrarHint()" está destinada a exibir a dica referente a palavra sorteada pela função "startGame". */
+/* Função "showHint()" está destinada a exibir a dica referente a palavra sorteada pela função "startGame". */
 
-function mostrarHint() {
+function showHint() {
   const HintContainer = document.getElementById('Hint-container');
   HintContainer.classList.add('show');
 }
 
-/* "btnHint" está linkado com o botão da dica e com a função "mostrarHint()" assim sendo 
+/* "btnHint" está linkado com o botão da dica e com a função "showHint()" assim sendo 
 possivel o acontecimento de um evento para exibir a dica quando o botão é clicado. */
 
 const btnHint = document.getElementById('Hint-button');
 btnHint.addEventListener('click', () => {
     const HintText = document.getElementById('Hint-text');
 
-    mostrarHint(); /* Chamada na função "mostrarHint()" que exibe a dica. */
+    showHint(); /* Chamada na função "showHint()" que exibe a dica. */
 });
 
-/* Função "ocultarHint()" está destinada a ocultar a dica referente a palavra sorteada pela função "startGame". */
+/* Função "closeHint()" está destinada a ocultar a dica referente a palavra sorteada pela função "startGame". */
 
-function ocultarHint() {
+function closeHint() {
   const HintContainer = document.getElementById('Hint-container');
   HintContainer.classList.remove('show');
 }
 
 /* Caso o usuário faça um clique no container da dica ou na tela do jogo está função irá ser chamada,
-assim fazendo outra chamada e ocultando a dica por meio da função "ocultarHint()". */
+assim fazendo outra chamada e ocultando a dica por meio da função "closeHint()". */
 
 document.addEventListener('click', (event) => {
   const HintContainer = document.getElementById('Hint-container');
 
   if (event.target !== btnHint && event.target !== HintContainer) {
       
-      ocultarHint(); /* Chamada na função "ocultarHint()" que oculta a dica. */
+      closeHint(); /* Chamada na função "closeHint()" que oculta a dica. */
   }
 });
 
