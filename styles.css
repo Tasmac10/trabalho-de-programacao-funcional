@@ -17,7 +17,7 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
 }
 *{
     margin: 0;
@@ -185,6 +185,7 @@ além da escolha da margem superior do elemento. */
     background-position: center;
     border: 5px solid #8b0000;
     border-radius: 10px;
+    margin-top: 20px;
 }
 #guilhotina-gif {
     display: block;
@@ -193,6 +194,7 @@ além da escolha da margem superior do elemento. */
     background-position: center;
     border: 5px solid #8b0000;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
 /* #logo aplica o estilo 'margin-top' usado para adicionar uma margem superior de 20 pixels a este elemento, o qual, refere-se ao logotipo da nossa universidade. */
@@ -252,6 +254,9 @@ a{
     display: block;
     transition: background-color 0.3s ease;
     margin: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #Hint-button:hover {
