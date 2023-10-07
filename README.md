@@ -1,4 +1,5 @@
 # Guilhotina - Jogo de Palavras em JavaScript (Paradigma Funcional)
+Acesse para jogar em qualquer lugar: https://guilhotina2023.netlify.app
 
 Um divertido e desafiador jogo de adivinhação de palavras inspirado no clássico jogo de forca, com um toque moderno e com o uso do paradigma funcional em JavaScript.
 
