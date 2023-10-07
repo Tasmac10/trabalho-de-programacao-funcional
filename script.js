@@ -1,6 +1,6 @@
 /* Registro de palavras que servirá como base para o nosso jogo. Essas palavras são selecionadas aleatoriamente a partir do tópico e da dificuldade escolhida pelo usuário,
 além disso, cada palavra possui uma dica específica que poderá ser usada caso o usuário necessite. */
-
+/*Princípio utilizado: Imutabilidade e Pureza nos registros */ 
 const words = {
   animals: {
     easy: [
@@ -72,6 +72,7 @@ irá fazer com que só as partes pertencentes ao id = "game" fiquem a mostra na 
 usa a Função audioClick, para que o botão de Iniciar jogo, emita som quando clicado*/
 /* A constante audioElement é criada usando o método getElementById do objeto document para obter o elemento de áudio com o id especificado. Isso permite que o código 
 inicie a reprodução da música de fundo do jogo*/ 
+/*Princípio utilizado: Funções de Alta Ordem */
 function startGame() {
   const level = document.getElementById("level").value;
   const theme = document.getElementById("theme").value;
@@ -145,7 +146,6 @@ a função diminui o número de chances em 1 e atualiza o elemento HTML com o no
 se o novo valor de chances for igual a 0, significa que o usuário perdeu o jogo. Nesse caso,
 a função esconde a seção do jogo e mostrará a seção de "game over", além disso, 
 desabilitará todas as teclas de letras para que o usuário não possa mais tentar adivinhar a palavra. */
- 
 const decreaseChances = () => {
 
   const chancesElement = document.getElementById('chances');
@@ -160,7 +160,7 @@ const decreaseChances = () => {
       disableAllKeys();
   }
 }
-
+/*Princípio do Paradigma Funcional utilizado: Funções de Alta Ordem, pois utiliza uma função como argumento de entrada */
 function chooseLetter(event) {
   
   const audioElement = document.getElementById("sound");
