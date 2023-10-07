@@ -45,6 +45,9 @@ const words = {
 } 
 
 
+
+
+
 /*Essas variáveis são utilizadas no jogo de adivinhação de palavras.
 A variável word armazena a palavra que o usuário deve adivinhar.
 A variável displayedWord é um array que armazena a palavra a ser exibida na tela, 
@@ -67,11 +70,12 @@ e junto com a palavra pegará a dica referente a ela, usará a função "display
 para que a palavra não seja revelada e usará a função "displayHint(Hint)" para que o texto referente a dica já esteja incrementado no botão da dica, além disso,
 irá fazer com que só as partes pertencentes ao id = "game" fiquem a mostra na tela do usuário. 
 usa a Função audioClick, para que o botão de Iniciar jogo, emita som quando clicado*/
-
+/* A constante audioElement é criada usando o método getElementById do objeto document para obter o elemento de áudio com o id especificado. Isso permite que o código 
+inicie a reprodução da música de fundo do jogo*/ 
 function startGame() {
   const level = document.getElementById("level").value;
   const theme = document.getElementById("theme").value;
-
+  const audioElement = document.getElementById("background-music");
   const wordPool = words[theme][level];
   const randomIndex = Math.floor(Math.random() * wordPool.length);
   word = wordPool[randomIndex].word;
@@ -86,6 +90,7 @@ function startGame() {
   document.getElementById("game").style.display = "block";
   document.getElementById("lostgame").style.display = "none";
   document.getElementById("wongame").style.display = "none";
+  audioElement.play();
 }
 
 /* A função displayHint(Hint) serve para que, quando a dica for selecionada ela seja escrita no container destinado
