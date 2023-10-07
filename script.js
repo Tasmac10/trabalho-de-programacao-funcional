@@ -65,7 +65,8 @@ desse elemento html e concatenar os elementos do array com separador de espaço:
 /* A função "startGame" iniciará o jogo, tendo como entrada o nível e tema escolhido pelo usuário, sorteará uma palavra aleatoriamente da lista baseada neste tema e nivel
 e junto com a palavra pegará a dica referente a ela, usará a função "displayword" para que o usuário veja a palavra com as letras substituídas por traços "_" e
 para que a palavra não seja revelada e usará a função "displayHint(Hint)" para que o texto referente a dica já esteja incrementado no botão da dica, além disso,
-irá fazer com que só as partes pertencentes ao id = "game" fiquem a mostra na tela do usuário. */
+irá fazer com que só as partes pertencentes ao id = "game" fiquem a mostra na tela do usuário. 
+usa a Função audioClick, para que o botão de Iniciar jogo, emita som quando clicado*/
 
 function startGame() {
   const level = document.getElementById("level").value;
@@ -78,6 +79,7 @@ function startGame() {
 
   displayedWord = Array(word.length).fill('_');
 
+  audioClick();
   displayWord();
   displayHint(Hint);
   document.getElementById("setup").style.display = "none";
@@ -155,6 +157,13 @@ const decreaseChances = () => {
 }
 
 function chooseLetter(event) {
+  
+  const audioElement = document.getElementById("sound");
+
+  if (audioElement) {
+      audioElement.play();
+  }
+  
   const btn = event.target;
   const char = btn.textContent.toLowerCase();
   btn.disabled = true;
@@ -194,16 +203,40 @@ function enableAllKeys() {
 /* A função "restartGame" está ligada com os botões "Jogar Novamente" e "Tentar Novamente", para que quando o usuário apertar, o jogo voltará
 a primeira página com todas as suas configurações reiniciadas para que o usuário possa escolher de novo.
 Ela reinicia o número de chances, determinando 4 chances, reinicia também "word" e "displayedWord", para que quando voltar a página inicial,
-tudo consiga funcionar sem que haja conflito com o jogo anterior. "enableAllKeys" reinicia todas as teclas do teclado para que o usuário consiga apertar. */
+tudo consiga funcionar sem que haja conflito com o jogo anterior. "enableAllKeys" reinicia todas as teclas do teclado para que o usuário consiga apertar.
+usa a função audioClick para que os botoes de jogar e tentar novamente emitam som ao serem clicados */
 
 function restartGame() {
   const chancesElement = document.getElementById('chances');
   chancesElement.textContent = '4';
   word = ''; 
   displayedWord = []; 
+  audioClick();
   enableAllKeys();
   document.getElementById("setup").style.display = "block";
   document.getElementById("game").style.display = "none";
   document.getElementById("wongame").style.display = "none";
   document.getElementById("lostgame").style.display = 'none';
+}
+
+/* Função 'audioClick' serve para que o audio html com id = sound2 seja tocado, ela foi criada para ser incorporada nos botões do html, para que em seu clique emita esse som */
+
+function audioClick() {
+  const audioElement = document.getElementById("sound2");
+
+  if (audioElement) {
+      audioElement.play();
+  }
+}
+
+/* Função 'audioHintButton' serve para que o audio html com id = sound3 seja tocado, ela foi criada para ser incorporada no botão de Dica,
+ para que em seu clique emita esse som e usa a função 'audioClick' para que som som dela tbm seja tocado ao mesmo tempo*/
+
+function audioHintButton() {
+  const audioElement = document.getElementById("sound3");
+
+  if (audioElement) {
+      audioElement.play();
+  }
+  audioClick();
 }
